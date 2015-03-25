@@ -1,0 +1,22 @@
+##CADisplayLink和NSTimer
+
+1、原理不同
+CADisplayLink是一个能让我们以和屏幕刷新率同步的频率将特定的内容画到屏幕上的定时器类。
+注册到runloop后，每当屏幕显示内容刷新结束后，runloop就会向CADisplayLink指定的target发送一次消息。
+
+NSTimer以指定的模式注册到runloop后，每当设定的周期时间到达后，会向指定的target发送一次指定的消息。
+
+
+2、周期设置方式不同。CADisplayLink周期是每秒60次，可以通过frameInterval属性设置。
+CADisplayLink的selector每秒调用的次数 = 60 / frameInterval
+NSTimer的时间直接设定，灵活
+
+3、精度不同。
+iOS设备的屏幕刷新频率是固定的，CADisplayLink在正常情况下会在每次刷新结束都被调用，精确度相当高。
+
+NSTimer的精确度就显得低了点，比如NSTimer的触发时间到的时候，runloop如果在忙于别的调用，触发时间就会推迟到下一个runloop周期。为了尽量避免在NSTimer触发时间到了而去中断当前处理的任务，NSTimer新增了tolerance属性，让用户可以设置可以容忍的触发的时间范围。
+
+4、使用场合
+ CADisplayLink 使用场合相对专一， 适合做界面的不停重绘，比如视频播放的时候需要不停地获取下一帧用于界面渲染。
+ 
+ NSTimer的使用范围要广泛的多，各种需要单次或者循环定时处理的任务都可以使用。
