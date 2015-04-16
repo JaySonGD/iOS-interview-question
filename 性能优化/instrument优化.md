@@ -1,0 +1,4 @@
+###1、耗时问题
+NSDateFormatter对象初始化会很慢，NSCalendar也是，保证这个变量只初始化一次。
+
+UIImage加载图片的时候，imagedNamed初始化会缓存，imageWithContentsOfFile初始化不缓存

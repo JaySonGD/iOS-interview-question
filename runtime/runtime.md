@@ -1,3 +1,5 @@
+
+补充：[浅析iOS高级编程-runtime](http://www.liuchendi.com/2014/08/26/iOS/3_runtime/)
 ##Runtime
 
 1、每个类都有一个实例，isa指针就指向这个实例所属的类，每个类也是一个对象，类也有isa指针
