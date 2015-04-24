@@ -9,7 +9,7 @@ NSOperation本身就是支持多核心的，可以在多线程中安全调用一
 如果手动的执行一个operation，并不添加到queue，则可以把operation设置成为同步或者异步的。
 
 
-`Operation 对象默认是同步的`,在同步的operation中，并没又单独创建一个线程，当你调用`start`方法的时候，同步的operation直接在当前的线程中执行。知道operation返回的时候，这个任务就执行完成了。
+`Operation 对象默认是同步的`,在同步的operation中，并没又单独创建一个线程，当你调用`start`方法的时候，同步的operation直接在当前的线程中执行。直到operation返回的时候，这个任务就执行完成了。
 
 
 当你调用`start`方法在异步的operation中，这个方法可能会在对应的任务完成前返回。
