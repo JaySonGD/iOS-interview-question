@@ -13,7 +13,7 @@
 
 ###KVO缺陷
 
-*	1、只能通过重写`-boserveValueForKeyPath:ofObject:change:context:`方法来获得通知。
+*	1、只能通过重写`-observeValueForKeyPath:ofObject:change:context:`方法来获得通知。
 	想要提供自定义的selector,或者传一个block，门都没有
 
 *	2、处理父类的情况，如果父类同样监听同一个对象的属性。有时候，不知道父类是不是对这个消息有兴趣。虽然`context`就是干这个的，也可以解决这个问题。在`addObserver:forKeyPath:options:context：`传进去一个父类不知道的context就可以。
