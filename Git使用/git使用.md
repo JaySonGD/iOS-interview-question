@@ -15,6 +15,7 @@ git diff  查看文件修改的不同
 用`HEAD`表示当前版本，上一个版本是`HEAD^` ，上上一个版本是`HEAD^^`
 
 git reset --hard HEAD^   //回退到上一个版本
+git reset --hard 版本id
 
 git reflog  //记录使用命令
 

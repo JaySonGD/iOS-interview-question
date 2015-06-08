@@ -3,6 +3,8 @@
 
 2、在创建UIView对象的时候，内部会自动创建一个层，当UIView要显示到屏幕上的时候，会调用drawRect方法进行绘图，并且将所有的内容都绘制在自己的层上，绘制完毕好，系统会将层拷贝到屏幕上，所以就完成了UIView的显示。
 
+
+position是layer中的anchorPoint点在superLayer中的位置坐标
 ##CALayer常用属性
 *	contents
 	*	是id类型的，实际情况是如果不是CGImage，得到的图层将是空白的。
