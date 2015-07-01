@@ -11,3 +11,7 @@ arc 与 mrc的优缺点
 缺点：
 
 *	Core Foundation中的malloc()或者free()等，ARC就鞭长莫及了，这时候还是需要自己手动进行内存管理。在之后我们会看到一些这方面的例子。
+
+
+MRC的缺点：
+1、Crash。忘记释放内存，
